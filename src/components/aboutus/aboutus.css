@@ -1,0 +1,102 @@
+.about__us{
+    background: #FFFFF0;
+    z-index: -2;
+}
+
+.grid-1{
+max-width: 390px;
+width: 390px;
+height: 340px;
+opacity: 1;
+border-top-left-radius: 94.86px;
+object-fit: cover;
+z-index: 200;
+}
+.grid-1-div{
+width: 306px;
+height: 269px;
+opacity: 1;
+border-left:40px solid #024241;
+border-top: 40px solid #024241;
+border-top-left-radius: 102.16px;
+border-top-right-radius: 18.24px;
+border-bottom-left-radius: 18.24px;
+z-index:100;
+
+}
+.grid-2{
+max-width: 228px;
+width: 228px;
+height: 341px;
+top: 18.61px;
+left: 477.59px;
+opacity: 1;
+border-top-left-radius: 18.24px;
+border-top-right-radius: 116.75px;
+border-bottom-right-radius: 18.24px;
+border-bottom-left-radius: 18.24px;
+object-fit: cover;
+}
+.grid-3{
+max-width: 268px;
+width: 268px;
+height: 279px;
+top: 384.2px;
+left: 52.55px;
+opacity: 1;
+border-top-left-radius: 18.24px;
+border-top-right-radius: 18.24px;
+border-bottom-right-radius: 18.24px;
+border-bottom-left-radius: 94.86px;
+object-fit: cover;
+}
+.grid-4{
+max-width: 364px;
+width: 364px;
+height: 295px;
+top: 384.2px;
+left: 341.88px;
+opacity: 1;
+border-top-left-radius: 18.24px;
+border-top-right-radius: 18.24px;
+border-bottom-right-radius: 94.86px;
+border-bottom-left-radius: 18.24px;
+object-fit: cover;
+}
+
+.aboutus__logo{
+    background-color: rgba(24, 46, 60, 1);
+}
+
+.aboutus__title h1{
+font-weight: 600;
+font-size: 60px;
+text-transform: capitalize;
+color: #024241;
+
+}
+.aboutus__title p{
+font-weight: 400;
+font-size: 20px;
+letter-spacing: 0%;
+color: rgba(24, 46, 60, 1);
+}
+
+.aboutus-text-1 h1{
+color: #024241;
+font-family: 'Poppins', sans-serif;
+font-weight: 600;
+font-size: 52.79px;
+line-height: 105%;
+letter-spacing: 0%;
+
+}
+.aboutus-text-1 p{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    text-transform: capitalize;
+    color: #182E3C;
+    
+    }

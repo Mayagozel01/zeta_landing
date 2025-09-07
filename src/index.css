@@ -1,0 +1,18 @@
+@import "tailwindcss";
+@import "./assets/fonts/Poppins/poppins.css";
+@import "./assets/fonts/monserrat/Montserrat/static/monserrat.css";
+body {
+  font-family: 'Poppins', sans-serif;
+}
+.container{
+  padding: 60px 120px;
+  max-width: 1920px;
+}
+ span.color-green{
+  color:rgba(133, 213, 200, 1)}
+
+.swiper-wrapper{
+  display: flex;
+  padding-top: 50px;
+  height: 500px!important; /* 👈 теперь границы не режутся */
+}

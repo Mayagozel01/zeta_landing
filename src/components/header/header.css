@@ -1,0 +1,21 @@
+.header__logo{
+ 
+}
+
+
+.header__menu a{
+font-weight: 500;
+font-size: 20px;
+color: #FFFFF0;
+}
+.header__menu a:hover, a:active{
+    text-decoration: underline;
+}
+
+.auth button{
+    opacity: 1;
+    padding: 9px 28px;
+    border-radius: 12px;
+    color: #013A39;
+    background-color: #FFFFFF;
+}
