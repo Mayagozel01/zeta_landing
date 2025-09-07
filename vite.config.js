@@ -6,4 +6,5 @@ import tailwindcss from '@tailwindcss/vite'
 export default defineConfig({
   plugins: [react(),
     tailwindcss(),],
+    base:'https://mayagozel01.github.io/zeta_landing/',
 })
