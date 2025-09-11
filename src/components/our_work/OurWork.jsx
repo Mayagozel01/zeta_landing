@@ -8,11 +8,11 @@ import start from './../../assets/images/start.png'
 
 const OurWork = ()=>{
 return (
-    <div className="w-full h-[830px] container bg-[#FFFFF0] flex flex-col py-12 gap-[130px] ourwork">
+    <div className="w-full container min-h-[830px] bg-[#FFFFF0] flex flex-col py-12 gap-[130px] ourwork">
         <div className="">  <img src={ourwork} alt="pic" />
             <h1 className='text-[#000000] mt-4'>Security support</h1>
         </div>
-        <div className='flex gap-[32.5px] '>
+        <div className='flex gap-[32.5px] flex-col items-center lg:flex-row md:flex-col sm:flex-col'>
             <div className='flex flex-col justify-center items-center gap-[30px] bg-[#FFFFFF] w-[310px] h-[210px]'>
                 <img src={identify} alt="pic" />
                 <p className='text-[#182E3C] text-[20px] font-[600]'>

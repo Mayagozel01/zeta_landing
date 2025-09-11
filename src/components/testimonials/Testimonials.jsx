@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
-import services from "./../../assets/images/services_2.png"
+import services from "./../../assets/images/services_2.png";
 
 const testimonials = [
   {
@@ -38,13 +38,13 @@ export default function TestimonialCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-[#02463F] container flex flex-col items-center gap-10">
-      <img src={services} alt="ser" className="w-[183px]"/>
-      <h2 className="text-4xl font-bold text-center text-white mb-12 w-[50%]">
-        Testimonials : Trusted By Our Clients
+    <div className="bg-[#02463F] container flex flex-col items-center sm:items-start md:items-start gap-10">
+      <img src={services} alt="Services" className="w-[183px]" />
+      <h2 className="text-4xl font-bold text-white mb-12 w-[50%] sm:w-full md:w-full sm:text-start md:text-start">
+        Testimonials: Trusted By Our Clients
       </h2>
 
-      <div className="max-w-6xl mx-auto px-4">
+      <div className="w-full sm:w-full md:w-full lg:max-w-6xl lg:mx-auto px-4">
         <Swiper
           slidesPerView={3}
           centeredSlides={true}
@@ -53,7 +53,8 @@ export default function TestimonialCarousel() {
           onSlideChange={(swiper) => setActiveIndex(swiper.realIndex)}
           breakpoints={{
             320: { slidesPerView: 1 },
-            768: { slidesPerView: 1.5 },
+            640: { slidesPerView: 1 },
+            768: { slidesPerView: 1 },
             1024: { slidesPerView: 3 },
           }}
         >
