@@ -15,7 +15,7 @@ export default function Marquee() {
   const repeatedItems = Array(4).fill(items).flat();
 
   return (
-    <div className="marquee">
+    <div className="marquee container">
       <div className="marquee-track">
         {repeatedItems.map((item, i) => (
           <div className="item" key={i}>
