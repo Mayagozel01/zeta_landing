@@ -38,9 +38,10 @@ export default function TestimonialCarousel() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <div className="bg-[#02463F] container flex flex-col items-center sm:items-start md:items-start gap-10">
-      <img src={services} alt="Services" className="w-[183px]" />
-      <h2 className="text-4xl font-bold text-white mb-12 w-[50%] sm:w-full md:w-full sm:text-start md:text-start">
+    <div className="bg-[#02463F] container flex flex-col items:start lg:items-center sm:items-start md:items-start gap-10">
+      <img src={services} alt="Services" className="w-[183px] sm:w-[120px]" />
+
+      <h2 className="font-bold text-white text-[24px] sm:text-[24px] md:text-[28px] lg:text-[32px] xl:text-[36px] mb-12 w-[50%] w-full sm:w-full md:w-full text-start lg:text-center sm:text-start md:text-start">
         Testimonials: Trusted By Our Clients
       </h2>
 
@@ -69,7 +70,7 @@ export default function TestimonialCarousel() {
                   }`}
               >
                 {/* Stars */}
-                <div className="flex mb-4">
+                <div className="flex mb-4 text-[16px] sm:text-[16px] md:text-[18px] lg:text-[20px] xl:text-[22px]">
                   {Array.from({ length: 5 }).map((_, i) => (
                     <span
                       key={i}
@@ -81,18 +82,22 @@ export default function TestimonialCarousel() {
                 </div>
 
                 {/* Title + Text */}
-                <h3 className="text-xl font-semibold mb-2">{t.title}</h3>
-                <p className="text-gray-200 flex-grow">{t.text}</p>
+                <h3 className="font-semibold mb-2 text-[18px] sm:text-[18px] md:text-[20px] lg:text-[22px] xl:text-[24px]">
+                  {t.title}
+                </h3>
+                <p className="text-gray-200 flex-grow text-[14px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]">
+                  {t.text}
+                </p>
 
                 {/* Avatar + Name */}
                 <div className="flex items-center mt-6">
                   <img
                     src={t.img}
                     alt={t.name}
-                    className="w-12 h-12 rounded-full mr-4"
+                    className="w-12 h-12 sm:w-10 sm:h-10 rounded-full mr-4"
                   />
                   <div>
-                    <p className="font-semibold">{t.name}</p>
+                    <p className="font-semibold text-[14px] sm:text-[14px] md:text-[16px] lg:text-[18px] xl:text-[20px]">{t.name}</p>
                     <span className="text-sm text-gray-400">✔ Verified</span>
                   </div>
                 </div>

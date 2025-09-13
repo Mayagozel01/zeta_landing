@@ -17,7 +17,9 @@ const slides = [
 
 export default function Carousel() {
   const [activeIndex, setActiveIndex] = useState(1);
+  const [slideWidth, setSlideWidth] = useState(500);
 
+  // Auto-slide
   useEffect(() => {
     const interval = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % slides.length);
@@ -25,49 +27,65 @@ export default function Carousel() {
     return () => clearInterval(interval);
   }, []);
 
-  return (
-    <div className="services container flex flex-col items-start">
-      <div className="flex flex-col gap-8">
-        <img src={services_2}  alt="service"className="w-[185px]" />
-        <h1 className="font-[600] text-[55px] text-[#FFFFF0]">Security support</h1>
+  // Update slide width based on window size
+  useEffect(() => {
+    const handleResize = () => {
+      const width = window.innerWidth;
+      if (width < 640) setSlideWidth(180);      // mobile
+      else if (width < 1024) setSlideWidth(300); // tablet
+      else setSlideWidth(500);                   // desktop
+    };
+    handleResize();
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
+  return (
+    <div className="services container flex flex-col items-start sm:items-start lg:items-center">
+      <div className="flex flex-col gap-8 items-center sm:items-start lg:items-center">
+        <img src={services_2} alt="service" className="w-[185px] sm:w-[120px]" />
+        <h1 className="font-[600] text-[28px] sm:text-[28px] md:text-[40px] lg:text-[50px] xl:text-[55px] text-[#FFFFF0]">
+          Security support
+        </h1>
       </div>
-      <div className="carousel">
+
+      <div className="carousel relative w-full flex justify-center items-center overflow-hidden mt-6">
         {slides.map((slide, index) => {
           let offset = index - activeIndex;
+          if (offset < -Math.floor(slides.length / 2)) offset += slides.length;
+          if (offset > Math.floor(slides.length / 2)) offset -= slides.length;
 
-          if (offset < -Math.floor(slides.length / 2)) {
-            offset += slides.length;
-          }
-          if (offset > Math.floor(slides.length / 2)) {
-            offset -= slides.length;
-          }
-
-          const slideWidth = 500;      // базовая ширина
-          const scaleFactor = 0.2;     // уменьшение
+          const scaleFactor = 0.2;
           const scale = 1 - Math.abs(offset) * scaleFactor;
 
-          // формула: половина ширины + половина уменьшенной ширины
+          // Horizontal translation based on slideWidth
           const translateX = offset * (slideWidth / 2 + (slideWidth * scale) / 2);
-
           const zIndex = 10 - Math.abs(offset);
 
           return (
             <div
               key={slide.id}
-              className="carousel-slide"
+              className="carousel-slide absolute transition-transform duration-500"
               style={{
                 transform: `translateX(${translateX}px) scale(${scale})`,
                 zIndex,
-                opacity: scale < 0.4 ? 0 : 1,
+                opacity: scale < 0.2 ? 0 : 1,
+                width: `${slideWidth}px`,
               }}
             >
-              <img src={slide.image} alt={slide.title} />
+              <img
+                src={slide.image}
+                alt={slide.title}
+                className="w-full h-auto object-contain"
+              />
             </div>
           );
         })}
       </div>
-      <h1 className="text-[60px] mt-6 text-[#FFFFF0] w-full text-center">{slides[activeIndex].title}</h1>
+
+      <h1 className="text-[28px] sm:text-[28px] md:text-[40px] lg:text-[50px] xl:text-[60px] mt-6 text-[#FFFFF0] w-full text-center">
+        {slides[activeIndex].title}
+      </h1>
     </div>
   );
 }
